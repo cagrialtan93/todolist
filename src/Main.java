@@ -1,25 +1,22 @@
+import java.time.LocalDate;
+import java.util.LinkedList;
+
 public class Main {
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
-        LinkedListNode linkedListNode = new LinkedListNode(21);
-        LinkedListNode secondLinkedListNode = new LinkedListNode(22);
-        LinkedListNode thirdLinkedListNode = new LinkedListNode(24);
-        LinkedListNode fourthLinkedListNode = new LinkedListNode(25);
-        LinkedListNode fifthLinkedListNode = new LinkedListNode(23);
-        LinkedListNode number20 = new LinkedListNode(20);
-        LinkedListNode number29 = new LinkedListNode(29);
-        LinkedListNode number27 = new LinkedListNode(27);
+        LinkedList<String> linkedList = new LinkedList<>();
+        LinkedListOfHell linkedListOfHell = new LinkedListOfHell(linkedList);
+        LinkedListNode linkedListNodeFirst = new LinkedListNode(LocalDate.of(2023, 12, 12), "Markete git", "Market");
+        LinkedListNode linkedListNodeSecond = new LinkedListNode(LocalDate.of(2023, 10, 3), "Ders çalış", "Study");
+        LinkedListNode linkedListNodeThird = new LinkedListNode(LocalDate.of(2023, 5, 2), "Mayayı gezdir", "Walk");
+        LinkedListNode linkedListNodeFourth = new LinkedListNode(LocalDate.of(2024, 5, 3), "Spor yap", "Lift");
 
-        linkedList.addNodeWithOrder(linkedListNode);
-        linkedList.addNodeWithOrder(secondLinkedListNode);
-        linkedList.addNodeWithOrder(thirdLinkedListNode);
-        linkedList.addNodeWithOrder(fourthLinkedListNode);
-        linkedList.addNodeWithOrder(fifthLinkedListNode);
-        linkedList.addNodeWithOrder(number20);
-        linkedList.addNodeWithOrder(number29);
-        linkedList.addNodeWithOrder(number27);
+        linkedListOfHell.addNodeWithOrder(linkedListNodeFirst);
+        linkedListOfHell.addNodeWithOrder(linkedListNodeSecond);
+        linkedListOfHell.addNodeWithOrder(linkedListNodeThird);
+        linkedListOfHell.addNodeWithOrder(linkedListNodeFourth);
 
+        System.out.println(linkedListOfHell.getHead().getPrevious());
 
-        linkedList.printLinkedList();
+        new LandingPage(linkedListOfHell);
     }
 }
