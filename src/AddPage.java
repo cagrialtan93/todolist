@@ -19,6 +19,9 @@ public class AddPage {
         System.out.println("Give us your todo: ");
         userInput = scanner.next();
 
+        System.out.println("Give us the tagname for your todo");
+        String tagNameUserInput = scanner.next();
+
         // Prompt the user and get the first input
         System.out.print("Enter the year: ");
         int year = scanner.nextInt();
@@ -33,6 +36,7 @@ public class AddPage {
 
         linkedListNode.setDate(LocalDate.of(year, month, date));
         linkedListNode.setValueOf(userInput);
+        linkedListNode.setTagName(tagNameUserInput);
         linkedListOfHell.addNodeWithOrder(linkedListNode);
 
     }

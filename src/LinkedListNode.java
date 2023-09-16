@@ -26,6 +26,7 @@ public class LinkedListNode {
         return previous;
     }
 
+
     public void setPrevious(LinkedListNode previous) {
         this.previous = previous;
     }

@@ -42,14 +42,24 @@ public class LinkedListOfHell {
         }
     }
 
-    public void findTheNodeandRemove(String stringToFind){
+    public void findTheNodeandRemove(String stringToFind) {
         LinkedListNode current = this.getHead();
-        while (!stringToFind.equals(current.getTagName())){
+        while (!stringToFind.equals(current.getTagName())) {
             current = current.getNext();
         }
 
-        current.getPrevious().setNext(current.getNext());
-        current.getNext().setPrevious(current.getPrevious());
+        if (current.getTagName().equals(head.getTagName())) {
+            current.getNext().setPrevious(head.getPrevious());
+            head = current.getNext();
+            size--;
+        }
+
+        else if (current.getNext() != null) {
+            current.getPrevious().setNext(current.getNext());
+            current.getNext().setPrevious(current.getPrevious());
+            size--;
+        }
+        current = null;
     }
 
     public LinkedList<String> getLinkedList() {
